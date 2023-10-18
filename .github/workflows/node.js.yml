@@ -26,7 +26,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: cd jest-init
+    - run: ls -a
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
