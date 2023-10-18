@@ -26,7 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - working-directory: ./jest-init
     - run: npm ci
+      working-directory: ./jest-init
     - run: npm run build --if-present
+      working-directory: ./jest-init
     - run: npm test
+      working-directory: ./jest-init
