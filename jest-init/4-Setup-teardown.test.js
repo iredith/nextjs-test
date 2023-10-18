@@ -1,3 +1,11 @@
+function initializeCityDatabase() {
+  console.log('InitializeCityDatabase');
+}
+
+function clearCityDatabase() {
+  console.log('clearCityDatabase');
+}
+
 // Repeating Setup
 /**
  * If you have some work you need to do repeatedly for many tests,
@@ -14,6 +22,10 @@ beforeEach(() => {
 afterEach(() => {
   clearCityDatabase();
 });
+
+function isCity(name) {
+  return Boolean(name);
+}
 
 test("city database has Vienna", () => {
   expect(isCity("Vienna")).toBeTruthy();
@@ -70,6 +82,14 @@ test('city database has Vienna', () => {
 test('city database has San Juan', () => {
   expect(isCity('San Juan')).toBeTruthy();
 });
+
+function initializeFoodDatabase() {
+  console.log('initializeFoodDatabase');
+}
+
+function isValidCityFoodPair(a, b) {
+  return Boolean(a) || Boolean(b);
+}
 
 describe('matching cities to foods', () => {
   // Applies only to tests in this describe block

@@ -1,17 +1,17 @@
 const { test, expect } = require("@jest/globals");
 
 // Promises
-test('The data is peanut butter', () => {
+test('The data is Peanut Butter', () => {
   const promise = new Promise(resolve => {
-    resolve("peanut butter!");
+    resolve("Peanut Butter!");
   })
-  return expect(promise).resolves.toBe('peanut butter!');
+  return expect(promise).resolves.toBe('Peanut Butter!');
 });
 
 const fetchData = (cb = null) => {
   if (typeof cb === 'function') {
     return new Promise(() => {
-      cb(null, "peanut butter");
+      cb(null, "Peanut Butter");
     }, () => {
       cb("Error", null);
     });
@@ -33,7 +33,7 @@ test('The data is Peanut Butter', () => {
 });
 
 // Async/Await
-test('the data is peanut butter', async () => {
+test('the data is Peanut Butter', async () => {
   const data = await fetchData();
   expect(data).toEqual('Peanut Butter');
 });
@@ -48,7 +48,7 @@ test('the fetch fails with an error', async () => {
 });
 
 // Or can divide into 2 test cases
-test("the data is peanut butter", async () => {
+test("the data is Peanut Butter", async () => {
   await expect(fetchData()).resolves.toBe("Peanut Butter");
 });
 
@@ -64,26 +64,26 @@ test("the data is peanut butter", async () => {
 
 // Callbacks
 // Don't DO THIS!
-test('the data is peanut butter', () => {
+test('the data is Peanut Butter', () => {
   function callback(error, data) {
     if (error) {
       throw error;
     }
-    expect(data).toBe('peanut butter');
+    expect(data).toBe('Peanut Butter');
   }
 
   fetchData(callback);
 });
 
 // DO THIS
-test("the data is peanut butter", (done) => {
+test("the data is Peanut Butter", (done) => {
   function callback(error, data) {
     if (error) {
       done(error);
       return;
     }
     try {
-      expect(data).toBe("peanut butter");
+      expect(data).toBe("Peanut Butter");
       done();
     } catch (error) {
       done(error);
@@ -94,8 +94,8 @@ test("the data is peanut butter", (done) => {
 });
 
 // /resolves/.rejects
-test("the data is peanut butter", () => {
-  return expect(fetchData()).resolves.toBe("peanut butter");
+test("the data is Peanut Butter", () => {
+  return expect(fetchData()).resolves.toBe("Peanut Butter");
 });
 
 test("the fetch fails with an error", () => {
