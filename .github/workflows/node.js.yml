@@ -26,13 +26,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: ls -a && pwd
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: instal dependencies
+    - name: install dependencies
       run: npm ci
     - name: create build if presentt
       run: npm run build --if-present
