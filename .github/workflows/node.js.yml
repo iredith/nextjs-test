@@ -26,10 +26,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: ls -a
+    - run: ls -a && pwd
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-      run: pwd
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
