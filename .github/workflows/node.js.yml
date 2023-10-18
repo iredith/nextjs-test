@@ -32,7 +32,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install dependencies
       run: npm ci
-    - name: create build if presentt
+    - name: create build if present
       run: npm run build --if-present
     - name: Run test cases
       run: npm test
